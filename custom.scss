@@ -1,0 +1,243 @@
+/*-- scss:defaults --*/
+
+// "Statistical Inference with R" theme — GW Libraries
+// GW brand-inspired palette
+$gw-blue: #033c5a;
+$gw-blue-light: #0a5c88;
+$gw-buff: #a69362;
+$gw-gold: #ffc72c;
+$ink: #1c2b36;
+$paper: #fdfbf5;
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fira+Code:wght@400;600&display=swap');
+
+$font-family-sans-serif: "Atkinson Hyperlegible", "Segoe UI", sans-serif;
+$font-family-monospace: "Fira Code", "Menlo", monospace;
+$presentation-heading-font: "Fraunces", Georgia, serif;
+
+$body-bg: $paper;
+$body-color: $ink;
+$link-color: $gw-blue-light;
+$presentation-heading-color: $gw-blue;
+
+$presentation-font-size-root: 36px;
+$presentation-h1-font-size: 2.2em;
+$presentation-h2-font-size: 1.5em;
+$presentation-h3-font-size: 1.1em;
+$presentation-heading-font-weight: 700;
+
+$code-color: #8a3b74;
+$code-block-bg: #f4f1e8;
+$code-block-border-color: $gw-buff;
+
+/*-- scss:rules --*/
+
+.reveal {
+
+  // Headings get a playful buff underline flourish
+  h2 {
+    padding-bottom: 0.15em;
+    border-bottom: 4px solid $gw-gold;
+    display: table;
+    margin-bottom: 0.4em;
+  }
+
+  h3 {
+    color: $gw-blue-light;
+  }
+
+  // Title slide: deep GW blue with gold accents
+  .title-slide,
+  #title-slide {
+    text-align: left;
+
+    h1.title {
+      color: $gw-gold;
+      font-weight: 900;
+      font-size: 2.4em;
+      line-height: 1.05;
+      border: none;
+    }
+
+    p.subtitle {
+      color: $paper;
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      font-size: 1.2em;
+      margin-top: 0.4em;
+    }
+
+    p.author, .quarto-title-authors {
+      color: $paper;
+      font-size: 0.85em;
+    }
+
+    p.date {
+      color: $gw-buff;
+      font-size: 0.7em;
+    }
+  }
+
+  // Custom title slide (replaces the auto-generated one)
+  .custom-title {
+    text-align: left;
+
+    h2:empty {
+      display: none;
+    }
+
+    .ct-title {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 900;
+      font-size: 2.4em;
+      line-height: 1.05;
+      color: $gw-gold;
+    }
+
+    .ct-series {
+      color: $gw-buff;
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      font-size: 1.0em;
+      margin-top: 0.3em;
+    }
+
+    .ct-subtitle {
+      color: $paper;
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      font-size: 1.2em;
+      margin-top: 0.3em;
+    }
+
+    .ct-author {
+      color: $gw-buff;
+      font-size: 0.7em;
+      margin-top: 0.8em;
+    }
+  }
+
+  // Section divider slides
+  .divider {
+    h2 {
+      color: $gw-gold;
+      border-bottom-color: $gw-buff;
+      font-size: 2em;
+    }
+    color: $paper;
+
+    a {
+      color: $gw-gold;
+    }
+
+    // Tables on the dark background: translucent stripe, light text
+    table {
+      td {
+        color: $paper;
+      }
+      tr:nth-child(odd) td {
+        background-color: rgba(253, 251, 245, 0.08);
+      }
+      tr:nth-child(even) td {
+        background-color: rgba(253, 251, 245, 0.18);
+      }
+      th:empty {
+        padding: 0;
+      }
+    }
+  }
+
+  // Lists: breathing room and gold markers
+  ul, ol {
+    li {
+      margin-bottom: 0.3em;
+      line-height: 1.3;
+    }
+    li::marker {
+      color: $gw-buff;
+    }
+  }
+
+  // Learners must see the literal characters they need to type:
+  // no ligatures turning |> into a triangle or <- into an arrow
+  code, pre, kbd {
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0, "calt" 0, "dlig" 0;
+  }
+
+  // Code blocks: clear border, generous size for the back row
+  pre {
+    border-radius: 10px;
+    border-left: 6px solid $gw-buff;
+    box-shadow: 2px 3px 0 rgba(3, 60, 90, 0.15);
+
+    code {
+      font-size: 0.85em;
+      line-height: 1.45;
+      padding: 0.6em 0.8em;
+      max-height: 480px;
+    }
+  }
+
+  code {
+    background-color: #efe9da;
+    border-radius: 4px;
+    padding: 0.05em 0.25em;
+  }
+
+  pre code {
+    background-color: transparent;
+    padding: 0.6em 0.8em;
+  }
+
+  // Tables: clean, readable
+  table {
+    font-size: 0.75em;
+
+    th {
+      background-color: $gw-blue;
+      color: $paper;
+      padding: 0.35em 0.7em;
+    }
+
+    td {
+      padding: 0.3em 0.7em;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f2eddf;
+    }
+  }
+
+  // Callout-ish highlight box
+  .tip-box {
+    background-color: #eaf3f8;
+    border-left: 6px solid $gw-blue-light;
+    border-radius: 8px;
+    padding: 0.5em 0.8em;
+    margin-top: 0.6em;
+    font-size: 0.85em;
+  }
+
+  .big-link {
+    font-size: 1.3em;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 1em;
+  }
+
+  .footer {
+    color: $gw-buff;
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+  }
+
+  .slide-number {
+    color: $gw-buff;
+  }
+
+  // Smaller text helper
+  .smaller {
+    font-size: 0.75em;
+  }
+}

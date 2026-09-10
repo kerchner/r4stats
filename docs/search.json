@@ -1,0 +1,9 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Statistical Inference with R",
+    "section": "",
+    "text": "Statistical Inference with R\n    Workshop Series · GW Libraries & Academic Innovation · Fall 2026\n    Dan Kerchner · George Washington University\n  \n\n  \n\n    \n      1\n      \n        Inference for Continuous Data\n        \n          t-tests, confidence intervals, and ANOVA for comparing means.\n          Assumptions, diagnostics, and effect sizes in R.\n        \n      \n      →\n    \n\n    \n      2\n      \n        Inference for Categorical Data\n        \n          Chi-square tests, proportions, and Fisher's exact test.\n          Working with counts and contingency tables in R.\n        \n      \n      →\n    \n\n    \n      3\n      \n        Linear & Logistic Regression Modeling\n        \n          Build, interpret, and evaluate linear and logistic regression models.\n          Predictors, model fit, and predictions in R.\n        \n      \n      →\n    \n\n  \n\n  \n    \n      Find all GW Libraries workshops at\n      library.gwu.edu/events\n       · \n      R resources: libguides.gwu.edu/r_stats"
+  }
+]

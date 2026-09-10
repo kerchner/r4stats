@@ -1,0 +1,150 @@
+/* home.css — landing page for Statistical Inference with R */
+
+:root {
+  --gw-blue: #033c5a;
+  --gw-blue-light: #0a5c88;
+  --gw-buff: #a69362;
+  --gw-gold: #ffc72c;
+  --ink: #1c2b36;
+  --paper: #fdfbf5;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: "Atkinson Hyperlegible", "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.home-wrapper {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+}
+
+/* ── Header ── */
+.home-header {
+  background-color: var(--gw-blue);
+  border-radius: 14px;
+  padding: 2.5rem 2.5rem 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.home-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 900;
+  font-size: 2.4rem;
+  color: var(--gw-gold);
+  margin: 0 0 0.35rem;
+  line-height: 1.1;
+}
+
+.home-subtitle {
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--paper);
+  margin: 0 0 0.4rem;
+}
+
+.home-author {
+  font-size: 0.82rem;
+  color: var(--gw-buff);
+  margin: 0;
+}
+
+/* ── Cards ── */
+.home-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.workshop-card {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background-color: #fff;
+  border: 2px solid #e8e2d4;
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.12s ease;
+}
+
+.workshop-card:hover {
+  border-color: var(--gw-blue-light);
+  box-shadow: 0 4px 16px rgba(3, 60, 90, 0.12);
+  transform: translateY(-2px);
+}
+
+.card-number {
+  flex-shrink: 0;
+  width: 2.6rem;
+  height: 2.6rem;
+  background-color: var(--gw-blue);
+  color: var(--gw-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 900;
+  font-size: 1.15rem;
+}
+
+.card-body {
+  flex: 1;
+}
+
+.card-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--gw-blue);
+  margin: 0 0 0.3rem;
+  border: none;
+}
+
+.card-desc {
+  font-size: 0.85rem;
+  color: #4a5b66;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.card-arrow {
+  flex-shrink: 0;
+  font-size: 1.4rem;
+  color: var(--gw-buff);
+  font-weight: 700;
+}
+
+/* ── Footer ── */
+.home-footer {
+  margin-top: 2.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #ddd8cc;
+  font-size: 0.78rem;
+  color: #5a6a75;
+  text-align: center;
+}
+
+.home-footer a {
+  color: var(--gw-blue-light);
+  text-decoration: none;
+}
+
+.home-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ── Responsive ── */
+@media (max-width: 540px) {
+  .home-title { font-size: 1.8rem; }
+  .card-arrow { display: none; }
+}

@@ -1,0 +1,36 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - continuous/index.qmd
+    - categorical/index.qmd
+    - regression/index.qmd
+  post-render:
+    - touch docs/.nojekyll
+
+website:
+  title: "Statistical Inference with R"
+  navbar: false
+
+format:
+  html:
+    theme: cosmo
+  revealjs:
+    slide-number: c/t
+    show-slide-number: all
+    hash-type: number
+    transition: slide
+    background-transition: fade
+    controls: true
+    progress: true
+    history: true
+    center: false
+    preview-links: auto
+    code-line-numbers: false
+    highlight-style: a11y
+    footer: "Statistical Inference with R · [GW Libraries & Academic Innovation](https://library.gwu.edu/) · [kerchner.github.io/r4stats](https://kerchner.github.io/r4stats)"
+    chalkboard: true
+    width: 1100
+    margin: 0.05
+    link-external-newwindow: true

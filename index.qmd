@@ -1,0 +1,67 @@
+---
+pagetitle: "Statistical Inference with R"
+format:
+  html:
+    theme: cosmo
+    css: home.css
+    toc: false
+---
+
+```{=html}
+<div class="home-wrapper">
+  <header class="home-header">
+    <h1 class="home-title">Statistical Inference with R</h1>
+    <p class="home-subtitle">Workshop Series · GW Libraries &amp; Academic Innovation · Fall 2026</p>
+    <p class="home-author">Dan Kerchner · George Washington University</p>
+  </header>
+
+  <main class="home-grid">
+
+    <a class="workshop-card" href="continuous/">
+      <div class="card-number">1</div>
+      <div class="card-body">
+        <h2 class="card-title">Inference for Continuous Data</h2>
+        <p class="card-desc">
+          t-tests, confidence intervals, and ANOVA for comparing means.
+          Assumptions, diagnostics, and effect sizes in R.
+        </p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a class="workshop-card" href="categorical/">
+      <div class="card-number">2</div>
+      <div class="card-body">
+        <h2 class="card-title">Inference for Categorical Data</h2>
+        <p class="card-desc">
+          Chi-square tests, proportions, and Fisher's exact test.
+          Working with counts and contingency tables in R.
+        </p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a class="workshop-card" href="regression/">
+      <div class="card-number">3</div>
+      <div class="card-body">
+        <h2 class="card-title">Linear &amp; Logistic Regression Modeling</h2>
+        <p class="card-desc">
+          Build, interpret, and evaluate linear and logistic regression models.
+          Predictors, model fit, and predictions in R.
+        </p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+  </main>
+
+  <footer class="home-footer">
+    <p>
+      Find all GW Libraries workshops at
+      <a href="https://library.gwu.edu/events">library.gwu.edu/events</a>
+      &nbsp;·&nbsp;
+      R resources: <a href="https://libguides.gwu.edu/r_stats">libguides.gwu.edu/r_stats</a>
+    </p>
+  </footer>
+</div>
+```

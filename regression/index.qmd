@@ -1,0 +1,21 @@
+---
+pagetitle: "Statistical Inference with R: Linear and Logistic Regression Modeling"
+---
+
+## {.custom-title background-color="#033c5a"}
+
+::: {.ct-series}
+Statistical Inference with R
+:::
+
+::: {.ct-title}
+Linear & Logistic Regression Modeling
+:::
+
+::: {.ct-subtitle}
+Building and interpreting regression models for continuous and binary outcomes
+:::
+
+::: {.ct-author}
+Dan Kerchner · George Washington University Libraries & Academic Innovation · Fall 2026
+:::
