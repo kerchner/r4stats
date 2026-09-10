@@ -19,3 +19,14 @@ Chi-square tests, proportions, and contingency tables in R
 ::: {.ct-author}
 Dan Kerchner · George Washington University Libraries & Academic Innovation · Fall 2026
 :::
+
+## Upcoming R Workshops (Fall 2026) 🗓️ {background-color="#033c5a" .divider .smaller}
+
+- **Sept. 29 (Tues.), 12:30-2:30pm** | *Statistical Inference with R: Linear & Logistic Regression Modeling*
+- **Oct. 1 (Thurs.), 1pm-3:30pm** | *Farther into R: More R for Data Analysis*
+
+There will be more in the Spring!
+
+
+📅 Find all GW Libraries workshops and events at
+_[library.gwu.edu/events](https://library.gwu.edu/events)_

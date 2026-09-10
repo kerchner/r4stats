@@ -19,3 +19,231 @@ Comparing means with confidence intervals, t-tests, and ANOVA
 ::: {.ct-author}
 Dan Kerchner · George Washington University Libraries & Academic Innovation · Fall 2026
 :::
+
+## Upcoming R Workshops (Fall 2026) 🗓️ {background-color="#033c5a" .divider .smaller}
+
+- **Sept. 22 (Tues.), 12:30-2:30pm** | *Statistical Inference with R: Inference for Categorical Data*
+- **Sept. 29 (Tues.), 12:30-2:30pm** | *Statistical Inference with R: Linear & Logistic Regression Modeling*
+- **Oct. 1 (Thurs.), 1pm-3:30pm** | *Farther into R: More R for Data Analysis*
+
+There will be more in the Spring!
+
+
+📅 Find all GW Libraries workshops and events at
+_[library.gwu.edu/events](https://library.gwu.edu/events)_
+
+## What are we actually doing?
+
+```{=html}
+<svg class="inference-diagram" viewBox="0 0 1000 490" role="img"
+     aria-label="A population of fifty figures; six are drawn at random to form a sample, each is measured, the sample mean x-bar equals 70.3 inches is computed, and that statistic is used to estimate the unknown population mean mu, giving both a point estimate and a confidence interval.">
+  <defs>
+    <g id="inf-person">
+      <circle cx="0" cy="-8" r="4.6"/>
+      <path d="M0,-2.2 c-4,0 -6.6,2.6 -6.6,6.4 V10 h13.2 V4.2 c0,-3.8 -2.6,-6.4 -6.6,-6.4 Z"/>
+    </g>
+    <marker id="inf-head" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" class="inf-arrowhead"/>
+    </marker>
+    <marker id="inf-head-buff" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" class="inf-arrowhead inf-arrowhead--buff"/>
+    </marker>
+  </defs>
+
+  <!-- ── Population ───────────────────────────────────────────── -->
+  <text class="inf-label" x="30" y="42">POPULATION<tspan class="inf-label-note" dx="10">· all GW graduate students</tspan></text>
+  <rect class="inf-panel" x="30" y="52" width="400" height="250" rx="12"/>
+  <g class="inf-person">
+    <use href="#inf-person" transform="translate(68,98) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(104,98) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(140,98) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(176,98) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(212,98) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(248,98) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(284,98) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(320,98) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(356,98) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(392,98) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(68,140) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(104,140) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(140,140) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(176,140) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(212,140) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(248,140) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(284,140) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(320,140) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(356,140) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(392,140) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(68,182) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(104,182) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(140,182) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(176,182) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(212,182) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(248,182) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(284,182) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(320,182) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(356,182) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(392,182) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(68,224) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(104,224) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(140,224) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(176,224) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(212,224) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(248,224) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(284,224) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(320,224) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(356,224) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(392,224) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(68,266) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(104,266) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(140,266) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(176,266) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(212,266) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(248,266) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(284,266) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(320,266) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(356,266) scale(1.5)"/>
+    <use href="#inf-person" transform="translate(392,266) scale(1.5)"/>
+  </g>
+
+  <!-- ── The parameter we want (always on screen) ──────────────── -->
+  <rect class="inf-box inf-box--unknown" x="30" y="340" width="400" height="125" rx="12"/>
+  <text class="inf-symbol" x="230" y="385" text-anchor="middle">&#956; = ?</text>
+  <text class="inf-caption" x="230" y="409" text-anchor="middle">parameter &#8212; fixed, but unknown</text>
+
+  <!-- ── The two things we want to say about it ─────────────────── -->
+  <rect class="inf-goal-chip" x="50" y="422" width="172" height="34" rx="8"/>
+  <text class="inf-goal" x="136" y="444" text-anchor="middle">point estimate</text>
+  <rect class="inf-goal-chip" x="238" y="422" width="172" height="34" rx="8"/>
+  <text class="inf-goal" x="324" y="444" text-anchor="middle">confidence interval</text>
+
+  <!-- ── Step 1: draw the sample ───────────────────────────────── -->
+  <g class="fragment">
+    <g class="inf-person inf-person--drawn">
+      <use href="#inf-person" transform="translate(104,98) scale(1.5)"/>
+      <use href="#inf-person" transform="translate(284,98) scale(1.5)"/>
+      <use href="#inf-person" transform="translate(356,140) scale(1.5)"/>
+      <use href="#inf-person" transform="translate(176,182) scale(1.5)"/>
+      <use href="#inf-person" transform="translate(68,224) scale(1.5)"/>
+      <use href="#inf-person" transform="translate(248,266) scale(1.5)"/>
+    </g>
+
+    <circle class="inf-step-badge" cx="452" cy="138" r="14"/>
+    <text class="inf-step-num" x="452" y="145" text-anchor="middle">1</text>
+    <text class="inf-step" x="474" y="145">draw at random</text>
+    <line class="inf-arrow" x1="440" y1="180" x2="630" y2="180" marker-end="url(#inf-head)"/>
+    <text class="inf-note" x="535" y="212" text-anchor="middle">and measure each one</text>
+
+    <text class="inf-label" x="640" y="42">SAMPLE<tspan class="inf-label-note" dx="10">· n = 6</tspan></text>
+    <rect class="inf-panel inf-panel--sample" x="640" y="52" width="330" height="250" rx="12"/>
+    <g class="inf-person inf-person--drawn">
+      <use href="#inf-person" transform="translate(717,135) scale(2)"/>
+      <use href="#inf-person" transform="translate(805,135) scale(2)"/>
+      <use href="#inf-person" transform="translate(893,135) scale(2)"/>
+      <use href="#inf-person" transform="translate(717,225) scale(2)"/>
+      <use href="#inf-person" transform="translate(805,225) scale(2)"/>
+      <use href="#inf-person" transform="translate(893,225) scale(2)"/>
+    </g>
+    <g class="inf-value" text-anchor="middle">
+      <text x="717" y="173">68</text>
+      <text x="805" y="173">74</text>
+      <text x="893" y="173">71</text>
+      <text x="717" y="263">66</text>
+      <text x="805" y="263">70</text>
+      <text x="893" y="263">73</text>
+    </g>
+  </g>
+
+  <!-- ── Step 2: compute the statistic ─────────────────────────── -->
+  <g class="fragment">
+    <line class="inf-arrow" x1="805" y1="306" x2="805" y2="356" marker-end="url(#inf-head)"/>
+    <circle class="inf-step-badge" cx="846" cy="318" r="13"/>
+    <text class="inf-step-num" x="846" y="325" text-anchor="middle">2</text>
+    <text class="inf-step" x="866" y="325">compute</text>
+    <rect class="inf-box" x="640" y="360" width="330" height="105" rx="12"/>
+    <text class="inf-symbol" x="719" y="405">x = 70.3 in</text>
+    <line class="inf-symbol-bar" x1="718" y1="382" x2="740" y2="382"/>
+    <text class="inf-caption" x="805" y="437" text-anchor="middle">statistic &#8212; known, but random</text>
+  </g>
+
+  <!-- ── Step 3: infer back to the parameter ───────────────────── -->
+  <g class="fragment">
+    <circle class="inf-step-badge inf-step-badge--buff" cx="492" cy="380" r="13"/>
+    <text class="inf-step-num" x="492" y="387" text-anchor="middle">3</text>
+    <text class="inf-step inf-step--buff" x="512" y="387">estimate</text>
+    <line class="inf-arrow inf-arrow--dashed" x1="630" y1="412" x2="440" y2="412" marker-end="url(#inf-head-buff)"/>
+    <text class="inf-note" x="535" y="442" text-anchor="middle">with uncertainty</text>
+  </g>
+</svg>
+```
+
+## Two forms of inference
+
+::::: {.inf-forms style="grid-template-columns: 1fr 1.3fr;"}
+
+:::: {.if-card .if-card--ci}
+[CONFIDENCE INTERVAL]{.if-card-label}
+
+[A range of plausible values for the parameter]{.if-card-lead}
+
+[$95\%\text{ CI for }\mu = (67.2,\ 73.5)$]{.if-formula}
+
+[(estimation)]{.if-card-note}
+::::
+
+:::: {.if-card .if-card--ht}
+[HYPOTHESIS TEST]{.if-card-label}
+
+[A verdict on one specific claim about the parameter]{.if-card-lead}
+
+[$H_0: \mu = \mu_0$]{.if-hyp-sym} [null hypothesis — or like  $\mu \leq \mu_0$, or $\mu \geq \mu_0$]{.if-hyp-gloss}
+
+[$H_A: \mu \neq \mu_0$]{.if-hyp-sym} [alternative  — or like $\mu > \mu_0$, or $\mu < \mu_0$ (respectively)]{.if-hyp-gloss}
+
+[(decision — $H_0$ or $H_A$)]{.if-card-note}
+::::
+
+:::::
+
+::: {.if-defs}
+$p$-value
+: If $H_0$ were true, the chance of getting a result **at least as extreme** as ours. [Not]{.underline} the chance that $H_0$ is true.
+
+$\alpha$
+: *Significance level* — our tolerance for rejecting $H_0$ when we should not. **Reject $H_0$ when $p < \alpha$.**
+:::
+
+::: {.if-link .fragment}
+Two views of the same thing: the 95% CI is exactly the set of $\mu_0$ we would *not* reject at $\alpha = 0.05$.
+:::
+
+## Quick refresher: t-tests and ANOVA
+
+:::: {.tt-tests}
+
+::: {.tt-row}
+[1-sample $t$-test]{.tt-name} [$H_0: \mu = \mu_0$]{.tt-null}
+
+[If the true mean were $\mu_0$, how often would we see a sample mean **at least this far** from $\mu_0$?]{.tt-q}
+:::
+
+::: {.tt-row}
+[2-sample $t$-test]{.tt-name} [$H_0: \mu_1 = \mu_2$]{.tt-null}
+
+[If the two groups had the **same mean**, how often would we see a difference in sample means **at least this large**?]{.tt-q}
+:::
+
+::: {.tt-row}
+[ANOVA]{.tt-name} [$H_0: \mu_1 = \mu_2 = \cdots = \mu_k$]{.tt-null}
+
+[If all $k$ groups had the **same mean**, how often would we see the group means spread **at least this far** apart?]{.tt-q}
+:::
+
+::::
+
+::: {.tt-note .fragment}
+Same question every time: *assume nothing is going on, then ask how surprising our data would be.*
+With $k = 2$, ANOVA **is** the 2-sample $t$-test — $F = t^2$.
+:::

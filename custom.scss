@@ -241,3 +241,306 @@ $code-block-border-color: $gw-buff;
     font-size: 0.75em;
   }
 }
+
+// ── Confidence interval vs. hypothesis test ──
+.reveal .inf-forms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6em;
+  margin-top: 0.2em;
+}
+
+.reveal .if-card {
+  background: $paper;
+  border: 2px solid $gw-blue-light;
+  border-left-width: 10px;
+  border-radius: 10px;
+  padding: 0.5em 0.7em;
+
+  // Estimation is blue like the sample; testing is buff like the parameter
+  &--ht {
+    border-color: $gw-buff;
+  }
+
+  // Size the paragraph itself, so line boxes hug the small text inside
+  p {
+    font-size: 0.55em;
+    line-height: 1.4;
+    margin: 0 0 0.5em;
+  }
+}
+
+.reveal .if-card-label {
+  font-size: 0.9em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: $gw-blue;
+}
+
+.reveal .if-card-lead {
+  color: rgba($ink, 0.75);
+}
+
+.reveal .if-formula {
+  font-size: 1.35em;
+  color: $gw-blue;
+}
+
+.reveal .if-hyp-sym {
+  font-size: 1.25em;
+  color: $gw-blue;
+  margin-right: 0.4em;
+  white-space: nowrap;
+}
+
+.reveal .if-hyp-gloss {
+  font-size: 0.82em;
+  font-style: italic;
+  color: $gw-buff;
+}
+
+.reveal .if-card-note {
+  font-size: 0.9em;
+  color: rgba($ink, 0.6);
+}
+
+// Definition list: term in a fixed column, body hanging beside it
+.reveal .if-defs {
+  margin-top: 0.7em;
+
+  dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 0.4em;
+    row-gap: 0.35em;
+  }
+
+  dt {
+    margin: 0;
+    font-size: 0.65em;
+    font-weight: 700;
+    color: $gw-blue-light;
+  }
+
+  dd {
+    margin: 0;
+    font-size: 0.55em;
+    line-height: 1.35;
+  }
+}
+
+// The caveat earns its own line — it is the point of the definition
+.reveal .if-def-warn {
+  display: block;
+  color: $gw-buff;
+  font-style: italic;
+}
+
+.reveal .if-link {
+  margin-top: 0.5em;
+  padding: 0.4em 0.7em;
+  border-radius: 8px;
+  background: #eaf3f8;
+  font-size: 0.55em;
+  color: $gw-blue;
+}
+
+// ── t-test / ANOVA refresher ──
+.reveal .tt-tests {
+  margin-top: 0.3em;
+}
+
+.reveal .tt-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.8em;
+  padding: 0.45em 0;
+
+  // Size the paragraph itself, so line boxes hug the small text inside
+  p {
+    font-size: 0.68em;
+    line-height: 1.4;
+    margin: 0;
+  }
+}
+
+// Hairline between tests, not around them
+.reveal .tt-row + .tt-row {
+  border-top: 1px solid rgba($gw-buff, 0.4);
+}
+
+.reveal .tt-name {
+  display: block;
+  font-weight: 700;
+  color: $gw-blue;
+}
+
+.reveal .tt-null {
+  display: block;
+  color: $gw-blue-light;
+}
+
+.reveal .tt-q {
+  font-style: italic;
+  color: rgba($ink, 0.8);
+}
+
+.reveal .tt-note {
+  margin-top: 0.6em;
+  padding: 0.4em 0.7em;
+  border-radius: 8px;
+  background: #eaf3f8;
+  font-size: 0.62em;
+  line-height: 1.4;
+  color: $gw-blue;
+}
+
+// ── Population → sample → statistic → parameter diagram ──
+.reveal .inference-diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0.2em auto 0;
+
+  text {
+    font-family: $font-family-sans-serif;
+  }
+
+  // Panels holding the little people
+  .inf-panel {
+    fill: #f4f1e8;
+    stroke: $gw-buff;
+    stroke-width: 1.5;
+
+    &--sample {
+      fill: #eaf3f8;
+      stroke: $gw-blue-light;
+      stroke-width: 2;
+    }
+  }
+
+  .inf-label {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    fill: $gw-blue;
+  }
+
+  .inf-label-note {
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 0;
+    fill: $gw-buff;
+  }
+
+  // The people: pale until drawn into the sample
+  .inf-person {
+    fill: #c3d0d8;
+
+    &--drawn {
+      fill: $gw-blue;
+    }
+  }
+
+  // Numbered step badges and their labels
+  .inf-step-badge {
+    fill: $gw-blue-light;
+
+    &--buff {
+      fill: $gw-buff;
+    }
+  }
+
+  .inf-step-num {
+    font-size: 17px;
+    font-weight: 700;
+    fill: $paper;
+  }
+
+  .inf-step {
+    font-size: 20px;
+    font-weight: 700;
+    fill: $gw-blue-light;
+
+    &--buff {
+      fill: #7f7049; // buff, darkened for contrast on paper
+    }
+  }
+
+  .inf-note {
+    font-size: 17px;
+    font-style: italic;
+    fill: rgba($ink, 0.6);
+  }
+
+  .inf-arrow {
+    stroke: $gw-blue-light;
+    stroke-width: 3;
+    fill: none;
+
+    // Step 3 runs the other way — inference, not data flow
+    &--dashed {
+      stroke: $gw-buff;
+      stroke-dasharray: 9 7;
+    }
+  }
+
+  .inf-arrowhead {
+    fill: $gw-blue-light;
+
+    &--buff {
+      fill: $gw-buff;
+    }
+  }
+
+  // Result boxes: solid border = known, dashed = unknown
+  .inf-box {
+    fill: #eaf3f8;
+    stroke: $gw-blue-light;
+    stroke-width: 2;
+
+    &--unknown {
+      fill: #f4f1e8;
+      stroke: $gw-buff;
+      stroke-dasharray: 8 6;
+    }
+  }
+
+  .inf-symbol {
+    font-family: $presentation-heading-font;
+    font-size: 36px;
+    font-weight: 700;
+    fill: $gw-blue;
+  }
+
+  // the bar of x-bar: drawn, because Fraunces has no combining macron
+  .inf-symbol-bar {
+    stroke: $gw-blue;
+    stroke-width: 3;
+  }
+
+  .inf-caption {
+    font-size: 17px;
+    fill: rgba($ink, 0.7);
+  }
+
+  // The two things we want to say about the parameter: solid, because
+  // these are what we produce, inside the dashed box of what we don't know
+  .inf-goal-chip {
+    fill: $paper;
+    stroke: $gw-buff;
+    stroke-width: 1.5;
+  }
+
+  .inf-goal {
+    font-size: 15px;
+    font-weight: 700;
+    fill: #7f7049; // buff, darkened for contrast on paper
+  }
+
+  .inf-value {
+    font-size: 17px;
+    font-weight: 700;
+    fill: $gw-blue-light;
+  }
+}
