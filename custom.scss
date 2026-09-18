@@ -346,14 +346,18 @@ $code-block-border-color: $gw-buff;
 }
 
 // ── t-test / ANOVA refresher ──
+// One grid for all three tests, so the columns line up across rows
 .reveal .tt-tests {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.8em;
   margin-top: 0.3em;
 }
 
 .reveal .tt-row {
   display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 0.8em;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
   padding: 0.45em 0;
 
   // Size the paragraph itself, so line boxes hug the small text inside
@@ -393,6 +397,218 @@ $code-block-border-color: $gw-buff;
   font-size: 0.62em;
   line-height: 1.4;
   color: $gw-blue;
+}
+
+// ── Paired vs. unpaired ──
+.reveal .pu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6em;
+  margin-top: 0.2em;
+}
+
+.reveal .pu-card {
+  background: $paper;
+  border: 2px solid $gw-blue-light;
+  border-left-width: 10px;
+  border-radius: 10px;
+  padding: 0.5em 0.7em;
+
+  // Unpaired is blue; paired is buff, like the test that goes with it
+  &--paired {
+    border-color: $gw-buff;
+  }
+
+  p {
+    font-size: 0.55em;
+    line-height: 1.35;
+    margin: 0 0 0.35em;
+  }
+}
+
+.reveal .pu-label {
+  display: block;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: $gw-blue;
+}
+
+.reveal .pu-lead {
+  display: block;
+  color: rgba($ink, 0.75);
+}
+
+.reveal .pu-test {
+  display: block;
+  color: $gw-blue-light;
+}
+
+.reveal .pu-fig {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0.1em 0 0.2em;
+
+  text {
+    font-family: $font-family-sans-serif;
+  }
+
+  .pu-panel {
+    fill: #f7f5ef;
+    stroke: rgba($gw-buff, 0.5);
+    stroke-width: 1.5;
+  }
+
+  .pu-axis {
+    stroke: rgba($ink, 0.3);
+    stroke-width: 2;
+  }
+
+  .pu-axis-head {
+    fill: rgba($ink, 0.3);
+  }
+
+  .pu-axis-label {
+    font-size: 14px;
+    font-style: italic;
+    fill: rgba($ink, 0.45);
+  }
+
+  .pu-col {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    fill: $gw-blue;
+  }
+
+  // The pairing itself: the only thing that differs between the two figures
+  .pu-link {
+    stroke: rgba($ink, 0.4);
+    stroke-width: 2;
+  }
+
+  .pu-dot--a {
+    fill: $gw-blue-light;
+  }
+
+  .pu-dot--b {
+    fill: $gw-buff;
+  }
+}
+
+.reveal .pu-note {
+  margin-top: 0.4em;
+  padding: 0.4em 0.7em;
+  border-radius: 8px;
+  background: #eaf3f8;
+  font-size: 0.55em;
+  line-height: 1.4;
+  color: $gw-blue;
+}
+
+// ── One-tailed vs. two-tailed ──
+.reveal .tw-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6em;
+  margin-top: 0.2em;
+}
+
+.reveal .tw-card {
+  background: $paper;
+  border: 2px solid $gw-blue-light;
+  border-left-width: 10px;
+  border-radius: 10px;
+  padding: 0.5em 0.7em;
+
+  // One-tailed is buff: the option that needs justifying
+  &--one {
+    border-color: $gw-buff;
+  }
+
+  p {
+    font-size: 0.55em;
+    line-height: 1.35;
+    margin: 0 0 0.3em;
+  }
+}
+
+.reveal .tw-label {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: $gw-blue;
+}
+
+.reveal .tw-tag {
+  font-style: italic;
+  color: $gw-buff;
+  margin-left: 0.4em;
+}
+
+.reveal .tw-hyp {
+  display: block;
+  color: $gw-blue-light;
+}
+
+.reveal .tw-sub {
+  display: block;
+  font-size: 0.85em;
+  color: rgba($ink, 0.65);
+}
+
+.reveal .tw-foot {
+  display: block;
+  color: rgba($ink, 0.8);
+}
+
+.reveal .tw-fig {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0.1em 0 0.25em;
+
+  text {
+    font-family: $font-family-sans-serif;
+  }
+
+  .tw-curve {
+    fill: none;
+    stroke: $gw-blue;
+    stroke-width: 2.5;
+  }
+
+  // The rejection region: where alpha actually goes
+  .tw-tail {
+    fill: rgba($gw-buff, 0.55);
+  }
+
+  .tw-base {
+    stroke: rgba($ink, 0.35);
+    stroke-width: 1.5;
+  }
+
+  .tw-alpha {
+    font-size: 15px;
+    font-weight: 700;
+    fill: #7f7049;
+  }
+
+  .tw-axis-label {
+    font-size: 14px;
+    font-style: italic;
+    fill: rgba($ink, 0.45);
+  }
+}
+
+.reveal .tw-warn {
+  margin-top: 0.4em;
+  padding: 0.4em 0.7em;
+  border-radius: 8px;
+  background: #f4f1e8;
+  border-left: 6px solid $gw-buff;
+  font-size: 0.5em;
+  line-height: 1.4;
+  color: rgba($ink, 0.85);
 }
 
 // ── Population → sample → statistic → parameter diagram ──

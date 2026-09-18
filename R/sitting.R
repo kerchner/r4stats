@@ -22,7 +22,7 @@ download.file("https://go.gwu.edu/sittingdata",
               "data/sitting.xlsx",
               mode='wb')
 
-sitting <- read_xlsx('data/sitting.xlsx', na = '.')
+sitting <- read_xlsx('data/sitting.xlsx', na = '.') # interpret "." as missing
 
 sitting <- sitting %>%
   select(Sex, Age, Sitting, METminwk, e4grp,

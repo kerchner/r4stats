@@ -546,6 +546,115 @@ If <span class="math inline">\(H_0\)</span> were true, the chance of getting a r
 <div class="tt-note fragment">
 <p>Same question every time: <em>assume nothing is going on, then ask how surprising our data would be.</em> With <span class="math inline">\(k = 2\)</span>, ANOVA <strong>is</strong> the 2-sample <span class="math inline">\(t\)</span>-test — <span class="math inline">\(F = t^2\)</span>.</p>
 </div>
+</section>
+<section class="slide level2">
+<h2>Paired vs.&nbsp;unpaired data</h2>
+<div class="pu-grid">
+<div class="pu-card">
+<p><span class="pu-label">UNPAIRED</span></p>
+<p><span class="pu-lead">Two independent groups. Nothing links a particular dot on the left to a particular dot on the right.</span></p>
+<svg class="pu-fig" viewbox="0 0 400 210" role="img" aria-label="Two columns of five dots each, side by side, with no lines between them.">
+  <rect class="pu-panel" x="10" y="10" width="380" height="190" rx="12"></rect>
+  <line class="pu-axis" x1="38" y1="185" x2="38" y2="52"></line>
+  <polygon class="pu-axis-head" points="38,44 33,54 43,54"></polygon>
+  <text class="pu-axis-label" x="24" y="118" text-anchor="middle" transform="rotate(-90 24 118)">value</text>
+
+  <text class="pu-col" x="150" y="28" text-anchor="middle">Group 1</text>
+  <text class="pu-col" x="290" y="28" text-anchor="middle">Group 2</text>
+
+  <g class="pu-dot pu-dot--a">
+    <circle cx="150" cy="182" r="8"></circle>
+    <circle cx="150" cy="154" r="8"></circle>
+    <circle cx="150" cy="130" r="8"></circle>
+    <circle cx="150" cy="104" r="8"></circle>
+    <circle cx="150" cy="66" r="8"></circle>
+  </g>
+  <g class="pu-dot pu-dot--b">
+    <circle cx="290" cy="162" r="8"></circle>
+    <circle cx="290" cy="136" r="8"></circle>
+    <circle cx="290" cy="104" r="8"></circle>
+    <circle cx="290" cy="82" r="8"></circle>
+    <circle cx="290" cy="48" r="8"></circle>
+  </g>
+</svg>
+<p><span class="pu-test">2-sample <span class="math inline">\(t\)</span>-test — <span class="math inline">\(H_0: \mu_1 = \mu_2\)</span></span></p>
+</div>
+<div class="pu-card pu-card--paired">
+<p><span class="pu-label">PAIRED</span></p>
+<p><span class="pu-lead">One subject, measured twice. Every line is one subject, so each dot has exactly one partner.</span></p>
+<svg class="pu-fig" viewbox="0 0 400 210" role="img" aria-label="The same two columns of five dots, now joined by five lines, one per subject; every line slopes upward from before to after.">
+  <rect class="pu-panel" x="10" y="10" width="380" height="190" rx="12"></rect>
+  <line class="pu-axis" x1="38" y1="185" x2="38" y2="52"></line>
+  <polygon class="pu-axis-head" points="38,44 33,54 43,54"></polygon>
+  <text class="pu-axis-label" x="24" y="118" text-anchor="middle" transform="rotate(-90 24 118)">value</text>
+
+  <text class="pu-col" x="150" y="28" text-anchor="middle">before</text>
+  <text class="pu-col" x="290" y="28" text-anchor="middle">after</text>
+
+  <g class="pu-link">
+    <line x1="150" y1="182" x2="290" y2="162"></line>
+    <line x1="150" y1="154" x2="290" y2="136"></line>
+    <line x1="150" y1="130" x2="290" y2="104"></line>
+    <line x1="150" y1="104" x2="290" y2="82"></line>
+    <line x1="150" y1="66" x2="290" y2="48"></line>
+  </g>
+  <g class="pu-dot pu-dot--a">
+    <circle cx="150" cy="182" r="8"></circle>
+    <circle cx="150" cy="154" r="8"></circle>
+    <circle cx="150" cy="130" r="8"></circle>
+    <circle cx="150" cy="104" r="8"></circle>
+    <circle cx="150" cy="66" r="8"></circle>
+  </g>
+  <g class="pu-dot pu-dot--b">
+    <circle cx="290" cy="162" r="8"></circle>
+    <circle cx="290" cy="136" r="8"></circle>
+    <circle cx="290" cy="104" r="8"></circle>
+    <circle cx="290" cy="82" r="8"></circle>
+    <circle cx="290" cy="48" r="8"></circle>
+  </g>
+</svg>
+<p><span class="pu-test">1-sample <span class="math inline">\(t\)</span>-test on the differences <span class="math inline">\(d\)</span> — <span class="math inline">\(H_0: \mu_d = 0\)</span></span></p>
+</div>
+</div>
+<div class="pu-note fragment">
+<p>Same dots on both sides — the lines are the only difference, and they are <em>extra information</em>. The two clouds overlap heavily, yet every subject went up: the paired test sees that, the unpaired test cannot. Pair only when the pairing is real.</p>
+</div>
+</section>
+<section class="slide level2">
+<h2>One-tailed vs.&nbsp;two-tailed</h2>
+<div class="tw-grid">
+<div class="tw-card">
+<p><span class="tw-label">TWO-TAILED</span> <span class="tw-tag">start here</span></p>
+<p><span class="tw-hyp"><span class="math inline">\(H_0: \mu_A = \mu_B\)</span> &nbsp;&nbsp; <span class="math inline">\(H_A: \mu_A \neq \mu_B\)</span></span></p>
+<p><span class="tw-sub">that is, <span class="math inline">\(\mu_A &gt; \mu_B\)</span> <strong>or</strong> <span class="math inline">\(\mu_A &lt; \mu_B\)</span></span></p>
+<svg class="tw-fig" viewbox="0 0 400 150" role="img" aria-label="A t distribution with both tails shaded, each holding alpha over two.">
+  <path class="tw-tail" d="M20,120 L20,119.6 L24,119.5 L28,119.3 L32,119.2 L36,118.9 L40,118.7 L44,118.4 L48,118.0 L52,117.6 L56,117.1 L60,116.5 L64,115.8 L68,114.9 L72,114.0 L76,112.9 L80,111.7 L84,110.3 L88,108.7 L92,106.9 L92,120 Z"></path>
+  <path class="tw-tail" d="M308,120 L308,106.9 L312,108.7 L316,110.3 L320,111.7 L324,112.9 L328,114.0 L332,114.9 L336,115.8 L340,116.5 L344,117.1 L348,117.6 L352,118.0 L356,118.4 L360,118.7 L364,118.9 L368,119.2 L372,119.3 L376,119.5 L380,119.6 L380,120 Z"></path>
+  <path class="tw-curve" d="M20,120 L20,119.6 L24,119.5 L28,119.3 L32,119.2 L36,118.9 L40,118.7 L44,118.4 L48,118.0 L52,117.6 L56,117.1 L60,116.5 L64,115.8 L68,114.9 L72,114.0 L76,112.9 L80,111.7 L84,110.3 L88,108.7 L92,106.9 L96,104.9 L100,102.8 L104,100.4 L108,97.8 L112,95.0 L116,92.0 L120,88.8 L124,85.4 L128,81.8 L132,78.1 L136,74.3 L140,70.4 L144,66.4 L148,62.4 L152,58.5 L156,54.6 L160,50.9 L164,47.4 L168,44.0 L172,40.9 L176,38.2 L180,35.8 L184,33.7 L188,32.1 L192,30.9 L196,30.2 L200,30.0 L204,30.2 L208,30.9 L212,32.1 L216,33.7 L220,35.8 L224,38.2 L228,40.9 L232,44.0 L236,47.4 L240,50.9 L244,54.6 L248,58.5 L252,62.4 L256,66.4 L260,70.4 L264,74.3 L268,78.1 L272,81.8 L276,85.4 L280,88.8 L284,92.0 L288,95.0 L292,97.8 L296,100.4 L300,102.8 L304,104.9 L308,106.9 L312,108.7 L316,110.3 L320,111.7 L324,112.9 L328,114.0 L332,114.9 L336,115.8 L340,116.5 L344,117.1 L348,117.6 L352,118.0 L356,118.4 L360,118.7 L364,118.9 L368,119.2 L372,119.3 L376,119.5 L380,119.6"></path>
+  <line class="tw-base" x1="16" y1="120" x2="384" y2="120"></line>
+  <text class="tw-alpha" x="70" y="139" text-anchor="middle">α/2</text>
+  <text class="tw-alpha" x="330" y="139" text-anchor="middle">α/2</text>
+  <text class="tw-axis-label" x="384" y="139" text-anchor="end">t</text>
+</svg>
+<p><span class="tw-foot"><span class="math inline">\(\alpha\)</span> is split between the tails — catches a difference in <strong>either</strong> direction.</span></p>
+</div>
+<div class="tw-card tw-card--one">
+<p><span class="tw-label">ONE-TAILED</span> <span class="tw-tag">only with a reason</span></p>
+<p><span class="tw-hyp"><span class="math inline">\(H_0: \mu_A \leq \mu_B\)</span> &nbsp;&nbsp; <span class="math inline">\(H_A: \mu_A &gt; \mu_B\)</span></span></p>
+<p><span class="tw-sub"><em>or</em> the mirror image: <span class="math inline">\(H_0: \mu_A \geq \mu_B\)</span> &nbsp; <span class="math inline">\(H_A: \mu_A &lt; \mu_B\)</span> — pick <strong>one</strong></span></p>
+<svg class="tw-fig" viewbox="0 0 400 150" role="img" aria-label="The same t distribution with only the right tail shaded, holding all of alpha.">
+  <path class="tw-tail" d="M292,120 L292,97.8 L296,100.4 L300,102.8 L304,104.9 L308,106.9 L312,108.7 L316,110.3 L320,111.7 L324,112.9 L328,114.0 L332,114.9 L336,115.8 L340,116.5 L344,117.1 L348,117.6 L352,118.0 L356,118.4 L360,118.7 L364,118.9 L368,119.2 L372,119.3 L376,119.5 L380,119.6 L380,120 Z"></path>
+  <path class="tw-curve" d="M20,120 L20,119.6 L24,119.5 L28,119.3 L32,119.2 L36,118.9 L40,118.7 L44,118.4 L48,118.0 L52,117.6 L56,117.1 L60,116.5 L64,115.8 L68,114.9 L72,114.0 L76,112.9 L80,111.7 L84,110.3 L88,108.7 L92,106.9 L96,104.9 L100,102.8 L104,100.4 L108,97.8 L112,95.0 L116,92.0 L120,88.8 L124,85.4 L128,81.8 L132,78.1 L136,74.3 L140,70.4 L144,66.4 L148,62.4 L152,58.5 L156,54.6 L160,50.9 L164,47.4 L168,44.0 L172,40.9 L176,38.2 L180,35.8 L184,33.7 L188,32.1 L192,30.9 L196,30.2 L200,30.0 L204,30.2 L208,30.9 L212,32.1 L216,33.7 L220,35.8 L224,38.2 L228,40.9 L232,44.0 L236,47.4 L240,50.9 L244,54.6 L248,58.5 L252,62.4 L256,66.4 L260,70.4 L264,74.3 L268,78.1 L272,81.8 L276,85.4 L280,88.8 L284,92.0 L288,95.0 L292,97.8 L296,100.4 L300,102.8 L304,104.9 L308,106.9 L312,108.7 L316,110.3 L320,111.7 L324,112.9 L328,114.0 L332,114.9 L336,115.8 L340,116.5 L344,117.1 L348,117.6 L352,118.0 L356,118.4 L360,118.7 L364,118.9 L368,119.2 L372,119.3 L376,119.5 L380,119.6"></path>
+  <line class="tw-base" x1="16" y1="120" x2="384" y2="120"></line>
+  <text class="tw-alpha" x="320" y="139" text-anchor="middle">all of α</text>
+  <text class="tw-axis-label" x="384" y="139" text-anchor="end">t</text>
+</svg>
+<p><span class="tw-foot">All of <span class="math inline">\(\alpha\)</span> sits in one tail — more power that way, <strong>none at all</strong> the other way.</span></p>
+</div>
+</div>
+<div class="tw-warn fragment">
+<p><strong>Choose the tail from the science, before you see the data.</strong> Picking it afterwards because that is where the difference landed makes a “5%” test really a 10% one. And if the effect turns up in the other tail, a one-tailed test cannot report it — however large it is. When in doubt, two-tailed: it is what <code>t.test()</code> does by default, and what most readers assume.</p>
+</div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
