@@ -460,12 +460,12 @@ Bernard, G. R., Wheeler, A. P., Russell, J. A., Schein, R., Summer, W. R., Stein
 
 :::::
 
-## Thanks! 🎶 
+## Thanks! 🎶 🙏
 
 **Dan Kerchner** | George Washington University Libraries   
 [kerchner@gwu.edu](mailto:kerchner@gwu.edu)
 
-Appointments:
+Stats & Coding help @ GW:
 
 |  |  |   |
 |---|---|----------------|
@@ -476,5 +476,5 @@ Appointments:
 : {tbl-colwidths="[30,35,35]"}
 
 These slides: [kerchner.github.io/r4stats/continuous](https://kerchner.github.io/r4stats/continuous)  
-Code: [github.com/kerchner/r4stats/](https://github.com/kerchner/r4stats) in the `continuous/R` folder  
+Code: [github.com/kerchner/r4stats](https://github.com/kerchner/r4stats) in the `continuous/R` folder  
 R LibGuide: [libguides.gwu.edu/r_stats](https://libguides.gwu.edu/r_stats)
