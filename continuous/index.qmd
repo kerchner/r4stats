@@ -13,7 +13,7 @@ Inference for Continuous Data
 :::
 
 ::: {.ct-subtitle}
-Comparing means with confidence intervals, t-tests, and ANOVA
+Comparing means t-tests, ANOVA, and confidence intervals
 :::
 
 ::: {.ct-author}
@@ -452,6 +452,8 @@ Learn to use R to read in data and conduct hypothesis tests for continuous measu
 Bernard, G. R., Wheeler, A. P., Russell, J. A., Schein, R., Summer, W. R., Steinberg, K. P., Fulkerson, W. J., Wright, P. E., Christman, B. W., Dupont, W. D., Higgins, S. B., & Swindell, B. B. (1997). The effects of ibuprofen on the physiology and survival of patients with sepsis. _New England Journal of Medicine, 336_(13), 912–918.
 
 [doi.org/10.1056/NEJM199703273361303](https://doi.org/10.1056/NEJM199703273361303)
+
+
 ::::
 
 :::: {.ds-img}

@@ -23,7 +23,7 @@ format:
         <h2 class="card-title">Inference for Continuous Data</h2>
         <p class="card-desc">
           t-tests, confidence intervals, and ANOVA for comparing means.
-          Assumptions, diagnostics, and effect sizes in R.
+          Assumptions, diagnostics, and visualizations.
         </p>
       </div>
       <div class="card-arrow">→</div>
