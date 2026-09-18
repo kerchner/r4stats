@@ -13,7 +13,7 @@ Inference for Continuous Data
 :::
 
 ::: {.ct-subtitle}
-Comparing means t-tests, ANOVA, and confidence intervals
+t-tests, ANOVA, and confidence intervals for comparing means
 :::
 
 ::: {.ct-author}
