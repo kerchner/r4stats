@@ -245,7 +245,6 @@ Two views of the same thing: the 95% CI is exactly the set of $\mu_0$ we would *
 
 ::: {.tt-note .fragment}
 Same question every time: *assume nothing is going on, then ask how surprising our data would be.*
-With $k = 2$, ANOVA **is** the 2-sample $t$-test — $F = t^2$.
 :::
 
 ## Paired vs. unpaired data
@@ -291,7 +290,7 @@ With $k = 2$, ANOVA **is** the 2-sample $t$-test — $F = t^2$.
 :::: {.pu-card .pu-card--paired}
 [PAIRED]{.pu-label}
 
-[One subject, measured twice. Every line is one subject, so each dot has exactly one partner.]{.pu-lead}
+[Each subject is measured twice. Every line is one subject, so each dot has exactly one partner.]{.pu-lead}
 
 ```{=html}
 <svg class="pu-fig" viewBox="0 0 400 210" role="img"
@@ -393,3 +392,89 @@ where the difference landed makes a "5%" test really a 10% one. And if the effec
 tail, a one-tailed test cannot report it — however large it is. When in doubt, two-tailed: it is what
 `t.test()` does by default, and what most readers assume.
 :::
+## What the t-test and ANOVA assume
+
+::: {.as-shared}
+[BOTH TESTS]{.as-head}
+
+1. **Independent observations** — within each group *and* across groups
+2. **Normality** — either the values within each group are roughly normal, **or** $n$ is large enough that the *sample mean* is
+3. **A continuous outcome** — a mean has to mean something
+:::
+
+::::: {.as-grid}
+
+:::: {.as-card}
+[2-SAMPLE $t$-TEST ALSO]{.as-label}
+
+[**Roughly equal variances** — `t.test()` defaults to Welch's approximation, which does not assume it. Check with `var.test()`.]{.as-body}
+::::
+
+:::: {.as-card .as-card--anova}
+[ANOVA ALSO]{.as-label}
+
+[**Roughly equal variances across all $k$ groups.** Check with `bartlett.test()` if normal, `car::leveneTest()` if not. Welch version: `oneway.test(var.equal = FALSE)`.]{.as-body}
+::::
+
+:::::
+
+::: {.as-foot}
+**Not satisfied?** Use a nonparametric test (Wilcoxon, Kruskal-Wallis), a bootstrap or permutation test, or a transformation. **Independence is non-negotiable** — no alternative test rescues it. That one needs a different design or model such as a paired test, or a mixed model.
+:::
+
+::: {.as-myth .fragment}
+**"$n \geq 30$" is a rule of thumb, not a requirement.** With normal data the $t$-test is exact at *any* $n$ — small samples are exactly what Gosset built it for. With badly skewed data, 30 can be nowhere near enough. You need normality **or** a large $n$, not both.
+:::
+
+## Today's goals
+
+Learn to use R to read in data and conduct hypothesis tests for continuous measures  
+
+- Checking assumptions  
+- Visualizing  
+- Computing p-values and confidence intervals
+
+## Today: 4 Scenarios
+
+- Single-sample t-test  
+- Paired t-test (same people, measured twice)  
+- 2-sample t-test (different people in each group)  
+- ANOVA (inference for means from more than 2 independent groups)
+
+## Today's data set
+
+::::: {.ds-grid}
+
+:::: {.ds-cite}
+
+<br>  
+
+Bernard, G. R., Wheeler, A. P., Russell, J. A., Schein, R., Summer, W. R., Steinberg, K. P., Fulkerson, W. J., Wright, P. E., Christman, B. W., Dupont, W. D., Higgins, S. B., & Swindell, B. B. (1997). The effects of ibuprofen on the physiology and survival of patients with sepsis. _New England Journal of Medicine, 336_(13), 912–918.
+
+[doi.org/10.1056/NEJM199703273361303](https://doi.org/10.1056/NEJM199703273361303)
+::::
+
+:::: {.ds-img}
+![](img/nejm.jpg){fig-alt="First page of the 1997 New England Journal of Medicine paper on ibuprofen in the treatment of sepsis."}
+::::
+
+:::::
+
+## Thanks! 🎶 
+
+**Dan Kerchner** | George Washington University Libraries   
+[kerchner@gwu.edu](mailto:kerchner@gwu.edu)
+
+Appointments:
+
+|  |  |   |
+|---|---|----------------|
+| me | R, Python, etc. | [calendly.com/kerchner](https://calendly.com/kerchner)  |
+| Academic Commons Data Consultants | R, Statistics, Python, SAS, Excel, etc. | [go.gwu.edu/DataConsulting](https://go.gwu.edu/DataConsulting) |
+| LAI Software developers | Python, web apps, HTML, etc. | [calendly.com/gwul-coding](https://calendly.com/gwul-coding) |
+
+: {tbl-colwidths="[30,35,35]"}
+
+These slides: [kerchner.github.io/r4stats/continuous](https://kerchner.github.io/r4stats/continuous)  
+Code: [github.com/kerchner/r4stats/](https://github.com/kerchner/r4stats) in the `continuous/R` folder  
+R LibGuide: [libguides.gwu.edu/r_stats](https://libguides.gwu.edu/r_stats)

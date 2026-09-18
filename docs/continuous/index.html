@@ -544,7 +544,7 @@ If <span class="math inline">\(H_0\)</span> were true, the chance of getting a r
 </div>
 </div>
 <div class="tt-note fragment">
-<p>Same question every time: <em>assume nothing is going on, then ask how surprising our data would be.</em> With <span class="math inline">\(k = 2\)</span>, ANOVA <strong>is</strong> the 2-sample <span class="math inline">\(t\)</span>-test — <span class="math inline">\(F = t^2\)</span>.</p>
+<p>Same question every time: <em>assume nothing is going on, then ask how surprising our data would be.</em></p>
 </div>
 </section>
 <section class="slide level2">
@@ -581,7 +581,7 @@ If <span class="math inline">\(H_0\)</span> were true, the chance of getting a r
 </div>
 <div class="pu-card pu-card--paired">
 <p><span class="pu-label">PAIRED</span></p>
-<p><span class="pu-lead">One subject, measured twice. Every line is one subject, so each dot has exactly one partner.</span></p>
+<p><span class="pu-lead">Each subject is measured twice. Every line is one subject, so each dot has exactly one partner.</span></p>
 <svg class="pu-fig" viewbox="0 0 400 210" role="img" aria-label="The same two columns of five dots, now joined by five lines, one per subject; every line slopes upward from before to after.">
   <rect class="pu-panel" x="10" y="10" width="380" height="190" rx="12"></rect>
   <line class="pu-axis" x1="38" y1="185" x2="38" y2="52"></line>
@@ -655,6 +655,102 @@ If <span class="math inline">\(H_0\)</span> were true, the chance of getting a r
 <div class="tw-warn fragment">
 <p><strong>Choose the tail from the science, before you see the data.</strong> Picking it afterwards because that is where the difference landed makes a “5%” test really a 10% one. And if the effect turns up in the other tail, a one-tailed test cannot report it — however large it is. When in doubt, two-tailed: it is what <code>t.test()</code> does by default, and what most readers assume.</p>
 </div>
+</section>
+<section class="slide level2">
+<h2>What the t-test and ANOVA assume</h2>
+<div class="as-shared">
+<p><span class="as-head">BOTH TESTS</span></p>
+<ol type="1">
+<li><strong>Independent observations</strong> — within each group <em>and</em> across groups</li>
+<li><strong>Normality</strong> — either the values within each group are roughly normal, <strong>or</strong> <span class="math inline">\(n\)</span> is large enough that the <em>sample mean</em> is</li>
+<li><strong>A continuous outcome</strong> — a mean has to mean something</li>
+</ol>
+</div>
+<div class="as-grid">
+<div class="as-card">
+<p><span class="as-label">2-SAMPLE <span class="math inline">\(t\)</span>-TEST ALSO</span></p>
+<p><span class="as-body"><strong>Roughly equal variances</strong> — <code>t.test()</code> defaults to Welch’s approximation, which does not assume it. Check with <code>var.test()</code>.</span></p>
+</div>
+<div class="as-card as-card--anova">
+<p><span class="as-label">ANOVA ALSO</span></p>
+<p><span class="as-body"><strong>Roughly equal variances across all <span class="math inline">\(k\)</span> groups.</strong> Check with <code>bartlett.test()</code> if normal, <code>car::leveneTest()</code> if not. Welch version: <code>oneway.test(var.equal = FALSE)</code>.</span></p>
+</div>
+</div>
+<div class="as-foot">
+<p><strong>Not satisfied?</strong> Use a nonparametric test (Wilcoxon, Kruskal-Wallis), a bootstrap or permutation test, or a transformation. <strong>Independence is non-negotiable</strong> — no alternative test rescues it. That one needs a different design or model such as a paired test, or a mixed model.</p>
+</div>
+<div class="as-myth fragment">
+<p><strong>“<span class="math inline">\(n \geq 30\)</span>” is a rule of thumb, not a requirement.</strong> With normal data the <span class="math inline">\(t\)</span>-test is exact at <em>any</em> <span class="math inline">\(n\)</span> — small samples are exactly what Gosset built it for. With badly skewed data, 30 can be nowhere near enough. You need normality <strong>or</strong> a large <span class="math inline">\(n\)</span>, not both.</p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Today’s goals</h2>
+<p>Learn to use R to read in data and conduct hypothesis tests for continuous measures</p>
+<ul>
+<li>Checking assumptions<br>
+</li>
+<li>Visualizing<br>
+</li>
+<li>Computing p-values and confidence intervals</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Today: 4 Scenarios</h2>
+<ul>
+<li>Single-sample t-test<br>
+</li>
+<li>Paired t-test (same people, measured twice)<br>
+</li>
+<li>2-sample t-test (different people in each group)<br>
+</li>
+<li>ANOVA (inference for means from more than 2 independent groups)</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Today’s data set</h2>
+<div class="ds-grid">
+<div class="ds-cite">
+<p><br></p>
+<p>Bernard, G. R., Wheeler, A. P., Russell, J. A., Schein, R., Summer, W. R., Steinberg, K. P., Fulkerson, W. J., Wright, P. E., Christman, B. W., Dupont, W. D., Higgins, S. B., &amp; Swindell, B. B. (1997). The effects of ibuprofen on the physiology and survival of patients with sepsis. <em>New England Journal of Medicine, 336</em>(13), 912–918.</p>
+<p><a href="https://doi.org/10.1056/NEJM199703273361303">doi.org/10.1056/NEJM199703273361303</a></p>
+</div>
+<div class="ds-img">
+<p><img data-src="img/nejm.jpg" alt="First page of the 1997 New England Journal of Medicine paper on ibuprofen in the treatment of sepsis."></p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Thanks! 🎶</h2>
+<p><strong>Dan Kerchner</strong> | George Washington University Libraries<br>
+<a href="mailto:kerchner@gwu.edu">kerchner@gwu.edu</a></p>
+<p>Appointments:</p>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 35%">
+<col style="width: 35%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>me</td>
+<td>R, Python, etc.</td>
+<td><a href="https://calendly.com/kerchner">calendly.com/kerchner</a></td>
+</tr>
+<tr class="even">
+<td>Academic Commons Data Consultants</td>
+<td>R, Statistics, Python, SAS, Excel, etc.</td>
+<td><a href="https://go.gwu.edu/DataConsulting">go.gwu.edu/DataConsulting</a></td>
+</tr>
+<tr class="odd">
+<td>LAI Software developers</td>
+<td>Python, web apps, HTML, etc.</td>
+<td><a href="https://calendly.com/gwul-coding">calendly.com/gwul-coding</a></td>
+</tr>
+</tbody>
+</table>
+<p>These slides: <a href="https://kerchner.github.io/r4stats/continuous">kerchner.github.io/r4stats/continuous</a><br>
+Code: <a href="https://github.com/kerchner/r4stats">github.com/kerchner/r4stats/</a> in the <code>continuous/R</code> folder<br>
+R LibGuide: <a href="https://libguides.gwu.edu/r_stats">libguides.gwu.edu/r_stats</a></p>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

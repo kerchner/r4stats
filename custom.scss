@@ -611,6 +611,129 @@ $code-block-border-color: $gw-buff;
   color: rgba($ink, 0.85);
 }
 
+// ── Assumptions of the t-test and ANOVA ──
+.reveal .as-shared {
+  background: #eaf3f8;
+  border-radius: 10px;
+  padding: 0.4em 0.8em 0.5em;
+
+  ol {
+    margin: 0.1em 0 0 1.1em;
+    font-size: 0.55em;
+    line-height: 1.45;
+  }
+
+  li {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.reveal .as-head {
+  font-size: 0.5em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: $gw-blue;
+}
+
+.reveal .as-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6em;
+  margin-top: 0.45em;
+}
+
+.reveal .as-card {
+  background: $paper;
+  border: 2px solid $gw-blue-light;
+  border-left-width: 10px;
+  border-radius: 10px;
+  padding: 0.45em 0.7em;
+
+  &--anova {
+    border-color: $gw-buff;
+  }
+
+  p {
+    font-size: 0.55em;
+    line-height: 1.35;
+    margin: 0;
+  }
+}
+
+.reveal .as-label {
+  display: block;
+  font-size: 0.9em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: $gw-blue;
+  margin-bottom: 0.2em;
+}
+
+.reveal .as-body {
+  display: block;
+  color: rgba($ink, 0.8);
+}
+
+.reveal .as-foot {
+  margin-top: 0.45em;
+  font-size: 0.55em;
+  line-height: 1.4;
+  color: rgba($ink, 0.8);
+}
+
+// The correction worth making out loud
+.reveal .as-myth {
+  margin-top: 0.4em;
+  padding: 0.4em 0.7em;
+  border-radius: 8px;
+  background: #f4f1e8;
+  border-left: 6px solid $gw-buff;
+  font-size: 0.5em;
+  line-height: 1.4;
+  color: rgba($ink, 0.85);
+}
+
+// ── Data set citation beside the paper's first page ──
+.reveal .ds-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 0em;
+  align-items: start;
+  margin-top: -1.3em;
+}
+
+.reveal .ds-cite {
+  p {
+    font-size: 0.62em;
+    line-height: 1.45;
+    margin: 0 0 0.8em;
+  }
+}
+
+.reveal .ds-img {
+  p {
+    margin: 0;
+  }
+
+  // Portrait page: height is the binding constraint, so cap that and let
+  // the width follow. 565px is what is left under the slide heading.
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 665px;
+    width: auto;
+    height: auto;
+    margin: 0 0 0 auto;
+    border: 1px solid rgba($ink, 0.15);
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba($ink, 0.18);
+  }
+}
+
 // ── Population → sample → statistic → parameter diagram ──
 .reveal .inference-diagram {
   display: block;
