@@ -13,6 +13,10 @@ library(ggplot2)
 library(readxl)
 library(forcats)
 
+# Create a folder/directory for the data
+
+dir.create('data')
+
 # Download links without the GW link shortener:
 #  https://ndownloader.figshare.com/files/25320434?private_link=91f0bbf7458cd866f43c
 #  https://ndownloader.figshare.com/files/25320440?private_link=c35de8173b8f2c3fd19b
