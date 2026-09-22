@@ -423,12 +423,12 @@ When the assumptions are not satisfied, we may use other approaches (nonparametr
 
 <br>  
 
-MacMahon B, Cole P, Lin TM, Lowe CR, Mirra AP, Ravnihar B, Salber EJ, Valaoras VG, Yuasa S. Age at first birth and breast cancer risk. _Bull World Health Organ. 1970;43(2):209-21._ PMID: 5312521; PMCID: PMC2427645.
+MacMahon B, Cole P, Lin TM, Lowe CR, Mirra AP, Ravnihar B, Salber EJ, Valaoras VG, Yuasa S. **Age at first birth and breast cancer risk**. _Bull World Health Organ. 1970;43(2):209-21._ PMID: 5312521; PMCID: PMC2427645.
 
 ::::
 
 :::: {.ds-img}
-![](img/nejm.jpg){fig-alt="First page of Age at first birth and breast cancer risk."}
+![](img/bwho.jpg){fig-alt="First page of Age at first birth and breast cancer risk."}
 ::::
 
 :::::
@@ -442,14 +442,11 @@ MacMahon B, Cole P, Lin TM, Lowe CR, Mirra AP, Ravnihar B, Salber EJ, Valaoras V
 
 <br>  
 
-Mandel EM, Bluestone CD, Rockette HE, Blatter MM, Reisinger KS, Wucher FP, Harper J. Duration of effusion after antibiotic treatment for acute otitis media: comparison of cefaclor and amoxicillin. Pediatr Infect Dis. 1982 Sep-Oct;1(5):310-6. doi: 10.1097/00006454-198209000-00006. PMID: 6760146.
-
-
-[doi.org/10.1097/00006454-198209000-00006](https://doi.org/10.1097/00006454-198209000-00006)
+Mandel EM, Bluestone CD, Rockette HE, Blatter MM, Reisinger KS, Wucher FP, Harper J. **Duration of effusion after antibiotic treatment for acute otitis media: comparison of cefaclor and amoxicillin**. Pediatr Infect Dis. 1982 Sep-Oct;1(5):310-6. doi: 10.1097/00006454-198209000-00006. PMID: 6760146.
 ::::
 
 :::: {.ds-img}
-![](img/nejm.jpg){fig-alt="First page of Duration of effusion after antibiotic treatment for acute otitis media: comparison of cefaclor and amoxicillin."}
+![](img/pid.jpg){fig-alt="First page of Duration of effusion after antibiotic treatment for acute otitis media: comparison of cefaclor and amoxicillin."}
 ::::
 
 :::::
