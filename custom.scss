@@ -858,6 +858,15 @@ $code-block-border-color: $gw-buff;
     stroke-width: 3;
   }
 
+  // the caret of p-hat, drawn for the same reason
+  .inf-symbol-hat {
+    stroke: $gw-blue;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+
   .inf-caption {
     font-size: 17px;
     fill: rgba($ink, 0.7);
@@ -881,5 +890,25 @@ $code-block-border-color: $gw-buff;
     font-size: 17px;
     font-weight: 700;
     fill: $gw-blue-light;
+
+    // the observations that are not the category we are counting
+    &--muted {
+      fill: rgba($ink, 0.45);
+    }
   }
+}
+
+// Plain bordered box
+.reveal .boxed {
+  border: 2px solid #333;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+}
+
+// Nested columns: the theme gives every child of a .column a side margin,
+// which pushes an inner .columns row past 100% and wraps it. Undo that.
+// (div.* selectors so this outranks the theme's :last-child > :not() rule)
+.reveal div.columns > div.column > div.columns {
+  margin-left: 0;
+  margin-right: 0;
 }
