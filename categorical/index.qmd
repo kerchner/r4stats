@@ -396,7 +396,7 @@ Two views of the same thing: the 95% CI is exactly the set of $\mu_0$ we would *
 
 [$H_0: OR = 1  \Leftrightarrow RR = 1 \Leftrightarrow RD = 0$]{.if-hyp-sym} [null hypothesis]{.if-hyp-gloss}
 
-[$H_A: OR \neq 0  \Leftrightarrow RR \neq 1 \Leftrightarrow RD \neq 0$ ]{.if-hyp-sym} [alternative hypothesis]{.if-hyp-gloss}
+[$H_A: OR \neq 1  \Leftrightarrow RR \neq 1 \Leftrightarrow RD \neq 0$ ]{.if-hyp-sym} [alternative hypothesis]{.if-hyp-gloss}
 
 ## Prerequisites / Assumptions
 
@@ -466,6 +466,6 @@ Stats & Coding help @ GW:
 
 : {tbl-colwidths="[30,35,35]"}
 
-These slides: [kerchner.github.io/r4stats/continuous](https://kerchner.github.io/r4stats/continuous)  
-Code: [github.com/kerchner/r4stats](https://github.com/kerchner/r4stats) in the `continuous/R` folder  
+These slides: [kerchner.github.io/r4stats/categorical](https://kerchner.github.io/r4stats/categorical)  
+Code: [github.com/kerchner/r4stats](https://github.com/kerchner/r4stats) in the `categorical/R` folder  
 R LibGuide: [libguides.gwu.edu/r_stats](https://libguides.gwu.edu/r_stats)
