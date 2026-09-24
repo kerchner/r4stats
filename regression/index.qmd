@@ -252,7 +252,44 @@ $e^{\beta_i}$ = OR (odds ratio) for having $Y=1$ for a 1-point increase in $X_i$
 
 ## Inference for regression modeling
 
+[Confidence Interval]{.underline}
 
+95% CI for $\beta$ = (0.44, 0.49)
+
+<br> 
+
+[Hypothesis Testing]{.underline}
+
+$H_0: \beta = \beta_0$ <- Null Hypothesis
+
+$H_A: \beta \neq \beta_0$ <- Alternative Hypothesis
+
+p-value: Chance that we're rejecting $H_0$ when we shouldn't be
+
+## Today's Goals
+
+Learn to use R to read in data and conduct regresison analysis with associated inference tests
+
+:::{.smaller}
+
+- Checking assumptions  
+- Visualizing the data  
+- Computing p-values, regression coefficients, confidence intervals, and (for logistic models) odds ratios
+
+::: 
+
+### 2 Scenarios
+
+:::{.smaller}
+1. Linear Regression (continuous outcome)  
+2. Logistic Regression (binary categorical outcome)  
+
+(with both continuous and categorical predictors)
+:::
+
+## Data Set #1:  Siddarth et al., 2018
+
+## Data Set #2: Framingham Heart Study
 
 ## Thanks! 🎶 🙏
 
