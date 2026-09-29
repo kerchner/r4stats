@@ -79,6 +79,9 @@ sitting.lm <- lm(data = sitting,
                  formula = MTL ~ Sitting)
 summary(sitting.lm)
 
+y_intercept <- sitting.lm$coefficients['(Intercept)']
+beta_1 <- sitting.lm$coefficients['Sitting']
+
 sitting_residuals <- sitting.lm$model
 sitting_residuals$residuals <- sitting.lm$residuals
 
