@@ -17,10 +17,12 @@ library(corrplot)
 # - Measured MTL thickness w/MRI scan
 # - Adjusted for age
 
+# Create data directory
+dir.create('data', showWarnings = FALSE)
+
 # Load data
-download.file("https://go.gwu.edu/sittingdata",
-              "data/sitting.xlsx",
-              mode='wb')
+download.file("https://bit.ly/4AAwDd6",
+              "data/sitting.xlsx", mode='wb')
 
 sitting <- read_xlsx('data/sitting.xlsx', na = '.') # interpret "." as missing
 
