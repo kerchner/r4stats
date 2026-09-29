@@ -371,5 +371,5 @@ Stats & Coding help @ GW:
 : {tbl-colwidths="[30,35,35]"}
 
 These slides: [kerchner.github.io/r4stats/regression](https://kerchner.github.io/r4stats/regression)  
-Code: [github.com/kerchner/r4stats](https://github.com/kerchner/r4stats) in the `categorical/R` folder  
+Code: [github.com/kerchner/r4stats](https://github.com/kerchner/r4stats) in the `regression/R` folder  
 R LibGuide: [libguides.gwu.edu/r_stats](https://libguides.gwu.edu/r_stats)
