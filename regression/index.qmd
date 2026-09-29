@@ -287,9 +287,73 @@ Learn to use R to read in data and conduct regresison analysis with associated i
 (with both continuous and categorical predictors)
 :::
 
-## Data Set #1:  Siddarth et al., 2018
+## Data Set #1:  Siddarth et al., 2018{.smaller}
+
+:::: {.columns}
+
+::: {.column width="55%"}
+
+Siddarth P, Burggren AC, Eyre HA, Small GW, Merrill DA (2018) Sedentary behavior associated with reduced medial temporal lobe thickness in middle-aged and older adults. PLoS ONE 13(4): e0195549.
+[doi.org/10.1371/journal.pone.0195549](https://doi.org/10.1371/journal.pone.0195549)
+
+- Examined associations between sedentary behavior and medial temporal lobe (MTL) subregion integrity  
+- 35 non-demented middle-aged and older adults  
+- Measured physical activity levels w/questionnaire  
+- Measured MTL thickness w/MRI scan  
+- Adjusted for age  
+
+:::
+
+::: {.column width="45%"}
+
+![](img/siddarth.jpg){height=450}
+
+:::
+
+::::
 
 ## Data Set #2: Framingham Heart Study
+
+- [framinghamheartstudy.org](https://www.framinghamheartstudy.org/)  
+- Long-term prospective study of the etiology of cardiovascular disease among a population of subjects in Framingham, MA  
+- Began in 1948 with 5,209 subjects  
+- Is the source of the term "risk factor"  
+- Over 3,000 peer-reviewed papers published based on this study  
+- Participants were each followed for a total of 24 years for cardiovascular events (heart attack, stroke, death, etc.)
+
+
+## First, visualize the data!  Is a linear model even the right one?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+Anscombe's Quartet
+
+![](img/anscombe.jpg){height=400}
+
+:::
+
+::: {.column width="50%"}
+
+Datasaurus Dozen
+
+![](img/datasaurus.jpg){height=400}
+
+:::
+
+::::
+
+## Some R packages and functions for regression
+
+- `lme4` - Linear mixed-effects models  
+- `MASS` - Model selection  
+- `ts()`, `arima()` - Time series object, model (part of `stats`)  
+- `forecast` - Forecasting for time series and linear models  
+- `mice` - imputation of missing data  
+- `medflex` - mediation analysis  
+- `splines2` - regression spline basis functions  
+- `survival` - survival analysis; JM - joint modeling  
 
 ## Thanks! 🎶 🙏
 

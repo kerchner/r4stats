@@ -586,11 +586,72 @@ H_1: \rho \neq 0
 <p>(with both continuous and categorical predictors)</p>
 </div>
 </section>
-<section class="slide level2">
+<section class="slide level2 smaller">
 <h2>Data Set #1: Siddarth et al., 2018</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>Siddarth P, Burggren AC, Eyre HA, Small GW, Merrill DA (2018) Sedentary behavior associated with reduced medial temporal lobe thickness in middle-aged and older adults. PLoS ONE 13(4): e0195549. <a href="https://doi.org/10.1371/journal.pone.0195549">doi.org/10.1371/journal.pone.0195549</a></p>
+<ul>
+<li>Examined associations between sedentary behavior and medial temporal lobe (MTL) subregion integrity<br>
+</li>
+<li>35 non-demented middle-aged and older adults<br>
+</li>
+<li>Measured physical activity levels w/questionnaire<br>
+</li>
+<li>Measured MTL thickness w/MRI scan<br>
+</li>
+<li>Adjusted for age</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><img data-src="img/siddarth.jpg" height="450"></p>
+</div></div>
 </section>
 <section class="slide level2">
 <h2>Data Set #2: Framingham Heart Study</h2>
+<ul>
+<li><a href="https://www.framinghamheartstudy.org/">framinghamheartstudy.org</a><br>
+</li>
+<li>Long-term prospective study of the etiology of cardiovascular disease among a population of subjects in Framingham, MA<br>
+</li>
+<li>Began in 1948 with 5,209 subjects<br>
+</li>
+<li>Is the source of the term “risk factor”<br>
+</li>
+<li>Over 3,000 peer-reviewed papers published based on this study<br>
+</li>
+<li>Participants were each followed for a total of 24 years for cardiovascular events (heart attack, stroke, death, etc.)</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>First, visualize the data! Is a linear model even the right one?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Anscombe’s Quartet</p>
+<p><img data-src="img/anscombe.jpg" height="400"></p>
+</div><div class="column" style="width:50%;">
+<p>Datasaurus Dozen</p>
+<p><img data-src="img/datasaurus.jpg" height="400"></p>
+</div></div>
+</section>
+<section class="slide level2">
+<h2>Some R packages and functions for regression</h2>
+<ul>
+<li><code>lme4</code> - Linear mixed-effects models<br>
+</li>
+<li><code>MASS</code> - Model selection<br>
+</li>
+<li><code>ts()</code>, <code>arima()</code> - Time series object, model (part of <code>stats</code>)<br>
+</li>
+<li><code>forecast</code> - Forecasting for time series and linear models<br>
+</li>
+<li><code>mice</code> - imputation of missing data<br>
+</li>
+<li><code>medflex</code> - mediation analysis<br>
+</li>
+<li><code>splines2</code> - regression spline basis functions<br>
+</li>
+<li><code>survival</code> - survival analysis; JM - joint modeling</li>
+</ul>
 </section>
 <section class="slide level2">
 <h2>Thanks! 🎶 🙏</h2>
